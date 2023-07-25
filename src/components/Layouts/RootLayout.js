@@ -1,24 +1,25 @@
+import styles from '@/styles/Home.module.css';
 import {
-  ProfileOutlined,
-  MobileOutlined,
-  UserOutlined,
   FacebookFilled,
-  LinkedinFilled,
   GoogleSquareFilled,
+  LinkedinFilled,
+  MobileOutlined,
+  ProfileOutlined,
   TwitterSquareFilled,
-} from "@ant-design/icons";
-import { Layout, Menu } from "antd";
+  UserOutlined,
+} from '@ant-design/icons';
+import { Layout, Menu } from 'antd';
+import Link from 'next/link';
+
 const { Header, Content, Footer } = Layout;
-import styles from "@/styles/Home.module.css";
-import Link from "next/link";
 
 const RootLayout = ({ children }) => {
   return (
     <Layout>
       <Header
         style={{
-          display: "flex",
-          justifyContent: "space-between",
+          display: 'flex',
+          justifyContent: 'space-between',
         }}
       >
         <div className="brand-logo">
@@ -26,10 +27,10 @@ const RootLayout = ({ children }) => {
             <Link
               href="/"
               style={{
-                color: "white",
-                backgroundColor: "#404040",
-                padding: "5px 10px",
-                borderRadius: "3px",
+                color: 'white',
+                backgroundColor: '#404040',
+                padding: '5px 10px',
+                borderRadius: '3px',
               }}
             >
               PH_NEWS PORTAL
@@ -37,7 +38,7 @@ const RootLayout = ({ children }) => {
           </h1>
         </div>
         <Menu theme="dark" mode="vertical" className={styles.menu_items}>
-          <Link href="/allNews">
+          <Link href="/">
             <items>
               <ProfileOutlined />
               All News
@@ -46,7 +47,7 @@ const RootLayout = ({ children }) => {
           <Link href="/about">
             <items
               style={{
-                margin: "0px 25px",
+                margin: '0px 25px',
               }}
             >
               <UserOutlined />
@@ -64,8 +65,8 @@ const RootLayout = ({ children }) => {
 
       <Content
         style={{
-          padding: "0 24px",
-          minHeight: "100vh",
+          padding: '0 24px',
+          minHeight: '100vh',
         }}
       >
         {children}
@@ -73,13 +74,13 @@ const RootLayout = ({ children }) => {
 
       <Footer
         style={{
-          textAlign: "center",
+          textAlign: 'center',
         }}
       >
-        <div className={styles.line}></div>
+        <div className={styles.line} />
         <h2
           style={{
-            fontSize: "28px",
+            fontSize: '28px',
           }}
         >
           PH-NEWS PORTAL
