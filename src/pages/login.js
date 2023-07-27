@@ -2,9 +2,17 @@
 import styles from '@/styles/Login.module.css';
 import { GithubOutlined, GoogleOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
+import { signIn } from 'next-auth/react';
 import Head from 'next/head';
 
 const LoginPage = () => {
+  const handelGithubLogin = () => {
+    signIn('github', { callbackUrl: 'http://localhost:3000' });
+  };
+  const handelGoogleLogin = () => {
+    signIn('google', { callbackUrl: 'http://localhost:3000' });
+  };
+
   return (
     <div>
       <Head>
@@ -13,8 +21,8 @@ const LoginPage = () => {
       <div className={styles.form}>
         <h3>LOGIN</h3>
         <div className={styles.social_icons}>
-          <GoogleOutlined />
-          <GithubOutlined />
+          <GoogleOutlined onClick={handelGoogleLogin} />
+          <GithubOutlined onClick={handelGithubLogin} />
         </div>
         <hr />
         <form>
