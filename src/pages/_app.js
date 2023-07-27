@@ -1,7 +1,11 @@
+import Navbar from '@/components/Layout/Navbar';
 import '@/styles/globals.css';
 
 export default function App({ Component, pageProps }) {
-  const getLayout = Component.getLayout || ((page) => page);
-
-  return getLayout(<Component {...pageProps} />);
+  return (
+    <>
+      <Navbar />
+      <Component {...pageProps} />
+    </>
+  );
 }
